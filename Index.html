@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Masa Muscular</title>
+    <link rel="stylesheet" href="MiEstilo.css" type="text/css">
+    <style>
+        article{
+            column-count: 2;
+            column-gap: 20px;
+            margin: 50px 50px;
+        }
+        form{
+            column-count: 3;
+        }
+
+    </style>
+</head>
+<!-- tab links -->
+<div class="tab">
+    <button class="tablinks" onclick="openPage(name, 'Calcular')" id="defaultOpen">Calcular IMC</button>
+    <button class="tablinks" onclick="openPage(name, 'Tabla')">Tabla de Estatura y Peso</button>
+</div>
+<body>
+<!-- Tab content -->
+<div id="Calcular" class="tabcontent">
+</div>
+<div id="Tabla" class="tabcontent">
+
+</div>
+
+<header>
+    <h1>Calculadora de Indice de Masa Corporal (IMC)</h1>
+</header>
+<section>
+    <article>
+    <h2 class="Definición">¿Qué es el ïndice Masa Corporal (IMC)?</h2>
+    <div>
+        <p>
+            Es una medida de asociación entre el peso y la talla de una persona. El IMC es usado como uno de varios indicadores para evaular el estado nutricional.
+            El IMC constituye la medida poblacional más útil del sobrepeso y la obesidad, pues la forma de calcularlo no varía en función del sexo ni de la edad en la población adulta. No obstante, debe considerarse como una guía aproximativa, pues puede no corresponder al mismo grado de gordura en diferentes individuos.
+            La Organización Mundial de la Salud, ha propuesto una clasificación del estado nutricional dependiendo del IMC de una persona.
+        </p>
+
+        <h2 class="Método">¿Cómo se mide el IMC?</h2>
+        <p>
+            La fórmula del IMC es el peso en kilogramos dividido por el cuadrado de la altura en metros (kg/m2). El IMC es una indicación simple de la relación entre el peso y la talla que se utiliza frecuentemente para identificar el sobrepeso y la obesidad en los adultos, tanto a nivel individual como poblacional.
+        </p>
+    </div>
+    <div>
+        <img src="imagenes/IMC-medidas-peso.png">
+    </div>
+    </article>
+
+    <h1>Calcular</h1>
+<div>
+    <form>
+        <div class="form-group">
+            <label for="input_peso">Peso:</label>
+            <input type="text" class="form-control" id="input_peso" aria-describedby="Peso" placeholder="Ingrese el peso en Kg">
+            <label for="magnitud_pe">Kg</label>
+        </div>
+        <div class="form-group">
+            <label for="Estatura">Estatura:</label>
+            <input type="text" class="form-control" id="Estatura" aria-describedby="Estatura" placeholder="Ingrese su estatura en metros">
+            <label for="magnitud_est">m</label>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary mb-2">Calcular</button>
+        </div>
+    </form>
+</div>
+    <h1>Resultados</h1>
+    Su IMC es
+
+    Mantener un peso saludable puede reducir el riesgo de enfermedades crónicas asociadas al sobrepeso y la obesidad.
+    Para infromación sobre la importancia de una alimentación saludable y actividad física para mantener un peso saludable, visite <a href="" target="_blank">Cómo prevenir el aumento de peso.</a>
+
+</section>
+</body>
+</html>
