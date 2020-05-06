@@ -16,4 +16,4 @@ La Organización Mundial de la Salud, ha propuesto una clasificación del estado
 - Look & Feel: no se ven en paralelo el gráfico de estado de IMC y el mensaje.
 
 ## Link al sitio
-[Calculadora de Índice de Masa Corporal] () 
+[Calculadora de Índice de Masa Corporal] (https://ucc-labcompu2.github.io/proyectos2020-casermeiro/) 
