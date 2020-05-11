@@ -63,14 +63,14 @@
     <div>
         <form id="Calculo">
             <div class="form-group">
-                <label for="input_peso">Peso:</label>
+                <label for="Peso">Peso:</label>
                 <input type="text" class="form-control" id="Peso" aria-describedby="Peso" placeholder="71">
-                <label for="magnitud_pe">Kg</label>
+                <label for="Peso">Kg</label>
             </div>
             <div class="form-group">
                 <label for="Estatura">Estatura:</label>
                 <input type="text" class="form-control" id="Estatura" aria-describedby="Estatura" placeholder="1.74">
-                <label for="magnitud_est">m</label>
+                <label for="Estatura">m</label>
             </div>
             <div class="form-group">
                 <button type="button" class="btn Calculo" onclick="obtener();obtenerTexto()">Calcular</button>
@@ -91,9 +91,11 @@
         <p>Tu IMC es: <span id="number"></span>
              <!--Mostrar gráfico resultante-->
              <div class="moverflecha">
-            <div><img src="imagenes/arrowabajo.PNG" id="flechaAbajo" alt="flecha de estado" style="margin-top:-9em"></div>
-            <div><img src="imagenes/barra.PNG" alt="nueva barra de estados"></div>
-             </div>
+                <div><img src="imagenes/arrowabajo.PNG" alt="flecha de estado"></div>
+            </div>
+            <div class="barra">
+                <div><img src="imagenes/barra.PNG" alt="nueva barra de estados"></div>
+            </div>
     </div>
     <div id="Resultados">
             <p id="textmov">&nbsp;</p>
