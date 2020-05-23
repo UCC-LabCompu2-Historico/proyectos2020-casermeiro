@@ -5,29 +5,11 @@
     <title>Calculadora de Masa Corporal</title>
     <link rel="stylesheet" href="MiEstilo.css" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="Calculo.js"></script>
+    <link href=imagenes/cropped-favicon.png rel="icon"/>
 </head>
 
-<link href=imagenes/cropped-favicon.png rel="icon"/>
-
-<!--Se utiliza este javascript para realizar el cálculo de la imc-->
-<script type="text/javascript" src="Calculo.js"></script>
-<script type="text/javascript">
-     function obtener() {
-        let number=division(document.getElementById("Peso").value,document.getElementById("Estatura").value);
-        document.getElementById("number").innerHTML=number;
-        // return imc;
-    }
-    function obtenerTexto(imc) {
-        let valueTexto = mensaje(imc);
-        document.getElementById("number").innerHTML=valueTexto;
-    }
-    function resetCalculadora() {
-        document.getElementById("Calculo").reset();
-        document.getElementById("number").reset();
-    }
-</script>
-
-<body>
+<body onload="dibujarEscala()">
 <!--Páginas-->
 <nav class="btn">
     <a href="index.html">Calcular IMC</a>
@@ -64,50 +46,49 @@
         <form id="Calculo">
             <div class="form-group">
                 <label for="Peso">Peso:</label>
-                <input type="text" class="form-control" id="Peso" aria-describedby="Peso" placeholder="71">
+                <input id="Peso" type="text" name="Peso" placeholder="71">
                 <label for="Peso">Kg</label>
             </div>
             <div class="form-group">
                 <label for="Estatura">Estatura:</label>
-                <input type="text" class="form-control" id="Estatura" aria-describedby="Estatura" placeholder="1.74">
+                <input id="Estatura" type="text" name="Estatura" placeholder="1.74">
                 <label for="Estatura">m</label>
             </div>
             <div class="form-group">
-                <button type="button" class="btn Calculo" onclick="obtener();obtenerTexto()">Calcular</button>
+                <button type="button" class="btn Calculo" onclick="division(Peso.value, Estatura.value)">Calcular</button>
             </div>
         </form>
     </div>
 
-    <canvas id="MyCanvas" width="10px" height="10px">
-    </canvas>
 
+    <!--Aquí se muestran los resultados-->
     <h1>Resultados</h1>
 
     <article>
+        <p>
+            <label for="Masa">Tu IMC es:</label>
+            <input id="Masa" type="text" name="Masa_Total" disabled>
+        </p>
 
-    <!--Aquí se muestran los resultados-->
-    <div id="Figura">
-
-        <p>Tu IMC es: <span id="number"></span>
              <!--Mostrar gráfico resultante-->
-             <div class="moverflecha">
-                <div><img src="imagenes/arrowabajo.PNG" alt="flecha de estado"></div>
-            </div>
-            <div class="barra">
-                <div><img src="imagenes/barra.PNG" alt="nueva barra de estados"></div>
-            </div>
-    </div>
-    <div id="Resultados">
-            <p id="textmov">&nbsp;</p>
-            <p id="text">&nbsp;</p>
-    </div>
+ <!--           <div class="barra">
+                <div><img src="imagenes/barra.PNG"></div>
+            </div> -->
+            <canvas id="MyCanvas" class="escala" width="400px" height="100px">
+                Tu navegador no soporta el tag de HTML5 canvas.
+            </canvas>
+        <p>
+            <label for = "Descripcion">Descripción:</label>
+            <input id = "Descripcion" type="text" name = "Description" disabled>
+        </p>
+
      </article>
 
     <button type="button" class="btn Reset" onclick="resetCalculadora()">Volver a Calcular</button>
 
 
     <div class="recuadro">
-    <p>
+        <p>
             Mantener un peso saludable puede reducir el riesgo de enfermedades crónicas asociadas al sobrepeso y la obesidad.
             Para información sobre la importancia de una alimentación saludable y actividad física para mantener un peso saludable, visite <a href="https://www.who.int/es/news-room/fact-sheets/detail/healthy-diet">Cómo prevenir el aumento de peso</a>
         </p>

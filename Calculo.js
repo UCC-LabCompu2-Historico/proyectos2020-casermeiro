@@ -1,13 +1,17 @@
+/*Valida datos vacíos o inválidos*/
 
+
+
+/* Calcula la masa corporal de acuerdo al peso y estatura ingresados*/
 function division(Peso,Estatura) {
-  number = Peso / (Estatura * Estatura);
-  number = Math.round((number + Number.EPSILON)*100)/100;
-    var texto = mensaje(number);
-    return number + "\n" + texto;
+    number = Peso / (Estatura * Estatura);
+    number = Math.round((number + Number.EPSILON)*100)/100;
+    document.getElementById("Masa_Total")[0].value = number;
 }
 
-function mensaje(number) {
- var pLeft, text, paddin, valpad, textmov = toString();
+/*Determina la condición de la persona de acuerdo al cálculo de masa corporal obtenido*/
+function indice(number) {
+ var text, valpad, textmov = toString();
 
     if (number < 18.5) {
         textmov = 'ESTÁS EN BAJO PESO';
@@ -31,11 +35,35 @@ function mensaje(number) {
         document.getElementById("flechaAbajo").style.paddingLeft = valpad + "%";
     }
    mensaje = textmov + "\n" + text;
-   return mensaje;
+   document.getElementById("Description")[0].value = mensaje;
 }
 
-function inicio(){
-    document.getElementById("limpiar").addEventListener('click',limpiar);
+function moverFlecha() {
+    
+}
+
+function resetCalculadora() {
+    document.getElementById("Calculo").reset();
+    document.getElementById("number").reset();
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+
+    canvas.width = canvas.width;
+}
+
+function dibujarEscala() {
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    var img = new Image();
+    var img1 = new  Image();
+    img1.src = "imagenes/arrowabajo.PNG";
+    img.src = "imagenes/barra.PNG";
+    img.onload = function () {
+        ctx.drawImage(img, 100, 50);
+    }
+    img1.onload = function () {
+        ctx.drawImage(img1, 100, 40);
+    }
 }
 
 

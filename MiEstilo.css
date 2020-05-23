@@ -40,12 +40,10 @@ nav{
     font-weight: bold;
 }
 
-/*#MyCanvas{
-   border: 1px solid gray;
-    background: #f0ebf1;
-}*/
-
-
+.escala {
+   border: 1px;
+   background: #d0d5d5;
+}
 
 /* Style the tab */
 .tab a {
