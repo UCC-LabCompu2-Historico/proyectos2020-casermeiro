@@ -41,14 +41,14 @@
     </article>
 
 <!--Acá inicia el cálculo de la IMC-->
-    <h1>Calcular</h1>
+    <h2>Calcular</h2>
     <div>
         <form id="Calculo">
             <div class="form-group">
                 <label for="Peso">Peso:</label>
                 <input id="Peso" type="text" name="Peso" placeholder="71">
                 <label for="Peso">Kg</label>
-            </div>
+           </div>
             <div class="form-group">
                 <label for="Estatura">Estatura:</label>
                 <input id="Estatura" type="text" name="Estatura" placeholder="1.74">
@@ -57,32 +57,34 @@
             <div class="form-group">
                 <button type="button" class="btn Calculo" onclick="division(Peso.value, Estatura.value)">Calcular</button>
             </div>
-        </form>
+    <div>
+        <img src="imagenes/formula.png" alt="Fórumula">
+    </div>
+       </form>
     </div>
 
 
     <!--Aquí se muestran los resultados-->
-    <h1>Resultados</h1>
+    <h2>Resultados</h2>
 
-    <article>
-        <p>
-            <label for="Masa">Tu IMC es:</label>
-            <input id="Masa" type="text" name="Masa_Total" disabled>
-        </p>
+    <div>
+        <form id="Resultado">
+            <div class="form-group">
+                <label for="Masa">Tu IMC es:</label>
+                <input id="Masa" type="text" name="Masa_Total" disabled>
+            </div>
+        </form>
 
-             <!--Mostrar gráfico resultante-->
- <!--           <div class="barra">
-                <div><img src="imagenes/barra.PNG"></div>
-            </div> -->
             <canvas id="MyCanvas" class="escala" width="400px" height="100px">
                 Tu navegador no soporta el tag de HTML5 canvas.
             </canvas>
+
         <p>
             <label for = "Descripcion">Descripción:</label>
             <input id = "Descripcion" type="text" name = "Description" disabled>
         </p>
+    </div>
 
-     </article>
 
     <button type="button" class="btn Reset" onclick="resetCalculadora()">Volver a Calcular</button>
 
