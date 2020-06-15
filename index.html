@@ -40,54 +40,68 @@
         </div>
     </article>
 
-<!--Acá inicia el cálculo de la IMC-->
+    <!--Acá inicia el cálculo de la IMC-->
     <h2>Calcular</h2>
     <div>
+
         <form id="Calculo">
             <div class="form-group">
-                <label for="Peso">Peso:</label>
-                <input id="Peso" type="text" name="Peso" placeholder="71">
-                <label for="Peso">Kg</label>
-           </div>
-            <div class="form-group">
-                <label for="Estatura">Estatura:</label>
-                <input id="Estatura" type="text" name="Estatura" placeholder="1.74">
-                <label for="Estatura">m</label>
+                <p>
+                    <label for="Peso">Peso:</label>
+                    <input id="Peso" type="text" name="Peso">
+                    <label for="Peso">Kg</label>
+                </p>
             </div>
             <div class="form-group">
-                <button type="button" class="btn Calculo" onclick="division(Peso.value, Estatura.value)">Calcular</button>
+                <p>
+                    <label for="Estatura">Estatura:</label>
+                    <input id="Estatura" type="text" name="Estatura">
+                    <label for="Estatura">m</label>
+                </p>
             </div>
-    <div>
-        <img src="imagenes/formula.png" alt="Fórumula">
-    </div>
-       </form>
+            <div class="form-group">
+                <p>
+                    <button type="button" class="btn Calculo" onclick="division(Peso.value, Estatura.value)">Calcular</button>
+                </p>
+            </div>
+            <div>
+                <p>
+                    <img src="imagenes/formula.png" alt="Fórumula">
+                </p>
+            </div>
+        </form>
     </div>
 
 
     <!--Aquí se muestran los resultados-->
     <h2>Resultados</h2>
 
-    <div>
-        <form id="Resultado">
-            <div class="form-group">
-                <label for="Masa">Tu IMC es:</label>
-                <input id="Masa" type="text" name="Masa_Total" disabled>
-            </div>
-        </form>
+    <article>
+        <div>
+            <form id="Resultado">
+                <div class="form-group">
+
+                    <label for="Masa">Tu IMC es:</label>
+                    <input id="Masa" type="text" name="Masa">
+
+                </div>
+            </form>
 
             <canvas id="MyCanvas" class="escala" width="400px" height="100px">
                 Tu navegador no soporta el tag de HTML5 canvas.
             </canvas>
 
-        <p>
-            <label for = "Descripcion">Descripción:</label>
-            <input id = "Descripcion" type="text" name = "Description" disabled>
-        </p>
-    </div>
+            <p>
+                <label for="Descripcion">Descripción:</label>
+            </p>
+            <p>
+                <textarea name="Descripcion" rows="5" cols="60" id="Descripcion"></textarea>
+            </p>
+        </div>
 
+       <button type="button" class="btn Reset" onclick="resetCalculadora()">Volver a Calcular</button>
 
-    <button type="button" class="btn Reset" onclick="resetCalculadora()">Volver a Calcular</button>
-
+    </article>
 
     <div class="recuadro">
         <p>
@@ -98,6 +112,8 @@
 </section>
 </body>
 <footer>
-     LabComp2-2020 UCC - casermeiro
+    <nav class="btn">
+        LabComp2-2020 UCC - casermeiro
+    </nav>
 </footer>
 </html>

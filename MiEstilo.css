@@ -22,14 +22,8 @@ div.recuadro{
     padding: 5px 30px;
 
 }
-
-.moverflecha {
-    margin-right:0px;
-
-}
-
-.barra {
-    margin-right: 0px;
+textarea{
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 nav{
@@ -40,10 +34,10 @@ nav{
     font-weight: bold;
 }
 
-.escala {
+/*.escala {
    border: 1px;
    background: #d0d5d5;
-}
+}*/
 
 /* Style the tab */
 .tab a {

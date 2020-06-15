@@ -4,12 +4,14 @@
 
 /* Calcula la masa corporal de acuerdo al peso y estatura ingresados*/
 function division(Peso,Estatura) {
-    var Peso = document.getElementById("Peso").value;
-    var Estatura = document.getElementById("Estatura").value;
-    number = Peso / (Estatura * Estatura);
-    number = Math.round((number + Number.EPSILON)*100)/100;
-    document.getElementById("Masa").value = number;
-    indice(number);
+   /* var Peso = document.getElementById("Peso").value;
+    var Estatura = document.getElementById("Estatura").value;*/
+
+        number = Peso / (Estatura * Estatura);
+        number = Math.round((number + Number.EPSILON) * 100) / 100;
+        document.getElementById("Masa").value = number;
+        indice(number);
+
 }
 
 /*Determina la condición de la persona de acuerdo al cálculo de masa corporal obtenido*/
@@ -19,7 +21,7 @@ function indice(number) {
     if (number < 18.5) {
         textmov = 'ESTÁS EN BAJO PESO';
         text = 'Puede haber riesgos de salud asociados a un IMC bajo, tales como anemia, osteoporosis, un sistema inmune debilitado y problemas de fertilidad..';
-        valpad = 80;
+        valpad = 30;
         /*document.getElementById("flechaAbajo").style.paddingLeft = valpad + "%";*/
         flecha = calcularEscala(valpad);
     } else if (number >= 18.5 && number <= 24.9) {
@@ -43,16 +45,6 @@ function indice(number) {
     }
    mensaje = textmov + "\n" + text;
    document.getElementById("Descripcion").value = mensaje;
-}
-
-
-function resetCalculadora() {
-    document.getElementById("Calculo").reset();
-    document.getElementById("Resultados").reset();
-    var canvas = document.getElementById("MyCanvas");
-    var ctx = canvas.getContext("2d");
-
-    canvas.width = canvas.width;
 }
 
 function dibujarEscala() {
@@ -81,6 +73,23 @@ function calcularEscala(valpad) {
     img.onload = function () {
         ctx.drawImage(img, 45, 38);
     }
+    img1.onload = function() {
         ctx.drawImage(img1, valpad + 45, 12);
+    }
 }
 
+function resetCalculadora() {
+    document.getElementById("Peso").value="";
+    document.getElementById("Estatura").value="";
+    document.getElementById("Masa").value="";
+    document.getElementById("Descripcion").value="";
+   dibujarEscala();
+   var canvas = document.getElementById("MyCanvas");
+    var ctx = canvas.getContext("2d");
+    canvas.width = canvas.width;
+/*
+    var img1 = new  Image();
+    img1.src = "imagenes/arrowabajo.PNG";
+
+    ctx.drawImage(img1, 45, 12);*/
+}
