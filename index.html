@@ -48,14 +48,14 @@
             <div class="form-group">
                 <p>
                     <label for="Peso">Peso:</label>
-                    <input id="Peso" type="text" name="Peso">
+                    <input id="Peso" type="text" name="Peso" maxlength="5" minlength="2">
                     <label for="Peso">Kg</label>
                 </p>
             </div>
             <div class="form-group">
                 <p>
                     <label for="Estatura">Estatura:</label>
-                    <input id="Estatura" type="text" name="Estatura">
+                    <input id="Estatura" type="text" name="Estatura" maxlength="4" minlength="4">
                     <label for="Estatura">m</label>
                 </p>
             </div>
@@ -82,7 +82,7 @@
                 <div class="form-group">
 
                     <label for="Masa">Tu IMC es:</label>
-                    <input id="Masa" type="text" name="Masa">
+                    <input id="Masa" type="text" name="Masa" disabled>
 
                 </div>
             </form>
@@ -92,10 +92,10 @@
             </canvas>
 
             <p>
-                <label for="Descripcion">Descripción:</label>
+                <label for="Comentario">Comentario:</label>
             </p>
             <p>
-                <textarea name="Descripcion" rows="5" cols="60" id="Descripcion"></textarea>
+                <textarea name="Comentario" disabled rows="5" cols="60" id="Comentario"></textarea>
             </p>
         </div>
 
