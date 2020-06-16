@@ -5,29 +5,11 @@
     <title>Calculadora de Masa Corporal</title>
     <link rel="stylesheet" href="MiEstilo.css" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="Calculo.js"></script>
+    <link href=imagenes/cropped-favicon.png rel="icon"/>
 </head>
 
-<link href=imagenes/cropped-favicon.png rel="icon"/>
-
-<!--Se utiliza este javascript para realizar el cálculo de la imc-->
-<script type="text/javascript" src="Calculo.js"></script>
-<script type="text/javascript">
-     function obtener() {
-        let number=division(document.getElementById("Peso").value,document.getElementById("Estatura").value);
-        document.getElementById("number").innerHTML=number;
-        // return imc;
-    }
-    function obtenerTexto(imc) {
-        let valueTexto = mensaje(imc);
-        document.getElementById("number").innerHTML=valueTexto;
-    }
-    function resetCalculadora() {
-        document.getElementById("Calculo").reset();
-        document.getElementById("number").reset();
-    }
-</script>
-
-<body>
+<body onload="dibujarEscala()">
 <!--Páginas-->
 <nav class="btn">
     <a href="index.html">Calcular IMC</a>
@@ -58,54 +40,71 @@
         </div>
     </article>
 
-<!--Acá inicia el cálculo de la IMC-->
-    <h1>Calcular</h1>
+    <!--Acá inicia el cálculo de la IMC-->
+    <h2>Calcular</h2>
     <div>
+
         <form id="Calculo">
             <div class="form-group">
-                <label for="input_peso">Peso:</label>
-                <input type="text" class="form-control" id="Peso" aria-describedby="Peso" placeholder="71">
-                <label for="magnitud_pe">Kg</label>
+                <p>
+                    <label for="Peso">Peso:</label>
+                    <input id="Peso" type="text" name="Peso" maxlength="5" minlength="2">
+                    <label for="Peso">Kg</label>
+                </p>
             </div>
             <div class="form-group">
-                <label for="Estatura">Estatura:</label>
-                <input type="text" class="form-control" id="Estatura" aria-describedby="Estatura" placeholder="1.74">
-                <label for="magnitud_est">m</label>
+                <p>
+                    <label for="Estatura">Estatura:</label>
+                    <input id="Estatura" type="text" name="Estatura" maxlength="4" minlength="4">
+                    <label for="Estatura">m</label>
+                </p>
             </div>
             <div class="form-group">
-                <button type="button" class="btn Calculo" onclick="obtener();obtenerTexto()">Calcular</button>
+                <p>
+                    <button type="button" class="btn Calculo" onclick="division(Peso.value, Estatura.value)">Calcular</button>
+                </p>
+            </div>
+            <div>
+                <p>
+                    <img src="imagenes/formula.png" alt="Fórumula">
+                </p>
             </div>
         </form>
     </div>
 
-    <canvas id="MyCanvas" width="10px" height="10px">
-    </canvas>
-
-    <h1>Resultados</h1>
-
-    <article>
 
     <!--Aquí se muestran los resultados-->
-    <div id="Figura">
+    <h2>Resultados</h2>
 
-        <p>Tu IMC es: <span id="number"></span>
-             <!--Mostrar gráfico resultante-->
-             <div class="moverflecha">
-            <div><img src="imagenes/arrowabajo.PNG" id="flechaAbajo" alt="flecha de estado" style="margin-top:-9em"></div>
-            <div><img src="imagenes/barra.PNG" alt="nueva barra de estados"></div>
-             </div>
-    </div>
-    <div id="Resultados">
-            <p id="textmov">&nbsp;</p>
-            <p id="text">&nbsp;</p>
-    </div>
-     </article>
+    <article>
+        <div>
+            <form id="Resultado">
+                <div class="form-group">
 
-    <button type="button" class="btn Reset" onclick="resetCalculadora()">Volver a Calcular</button>
+                    <label for="Masa">Tu IMC es:</label>
+                    <input id="Masa" type="text" name="Masa" disabled>
 
+                </div>
+            </form>
+
+            <canvas id="MyCanvas" class="escala" width="400px" height="100px">
+                Tu navegador no soporta el tag de HTML5 canvas.
+            </canvas>
+
+            <p>
+                <label for="Comentario">Comentario:</label>
+            </p>
+            <p>
+                <textarea name="Comentario" disabled rows="5" cols="60" id="Comentario"></textarea>
+            </p>
+        </div>
+
+       <button type="button" class="btn Reset" onclick="resetCalculadora()">Volver a Calcular</button>
+
+    </article>
 
     <div class="recuadro">
-    <p>
+        <p>
             Mantener un peso saludable puede reducir el riesgo de enfermedades crónicas asociadas al sobrepeso y la obesidad.
             Para información sobre la importancia de una alimentación saludable y actividad física para mantener un peso saludable, visite <a href="https://www.who.int/es/news-room/fact-sheets/detail/healthy-diet">Cómo prevenir el aumento de peso</a>
         </p>
@@ -113,6 +112,8 @@
 </section>
 </body>
 <footer>
-     LabComp2-2020 UCC - casermeiro
+    <nav class="btn">
+        LabComp2-2020 UCC - casermeiro
+    </nav>
 </footer>
 </html>
