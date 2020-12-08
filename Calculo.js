@@ -21,7 +21,6 @@ function division(Peso,Estatura) {
         indice(number);
     }
 }
-
 /**
  * Descripción: Determina la condición de la persona de acuerdo al cálculo de masa corporal obtenido
  * @method Nombre de la función: indice
